@@ -144,14 +144,7 @@ main {
 }
 
 .btn--new {
-  top: 4rem;
   margin-bottom: 285px;
-}
-.btn--roll {
-  top: 39.3rem;
-}
-.btn--hold {
-  top: 46.1rem;
 }
 
 .btn:active {
@@ -193,20 +186,24 @@ main {
     border-radius: 0;
   }
 
+  .player {
+    padding: 30px;
+  }
+
+  .player:first-of-type {
+    padding-top: 60px;
+  }
+
   .btns {
     flex-direction: row;
-    height: fit-content;
-    position: relative;
-    top: 0;
-    left: 0;
+    position: initial;
     transform: none;
     background-color: #c7365f;
     justify-content: center;
-    box-shadow: none;
-    padding-top: 50px;
+    padding: 5px 0;
   }
 
-  .btns .btn {
+  .btns .btn:not(.btn--new) {
     border-radius: 0;
     padding: 10px;
     backdrop-filter: none;
@@ -214,33 +211,41 @@ main {
     box-shadow: none;
   }
 
-  .btns .btn span {
+  .btns .btn:not(.btn--new) span {
     display: none;
   }
 
-  .btns .btn::first-letter {
+  .btns .btn:first-letter {
     margin: 0;
+    font-size: 2.7rem;
   }
 
-  .btns .btn--new {
-    margin-bottom: 0;
-  }
-
-  .btns .btn--roll {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0px;
-    /* background-color: #c7365f; */
-  }
-
-  .btns .btn--roll:active {
-    transform: translate(-50%, 3px);
+  .btns > div {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .dice {
     position: initial;
     transform: none;
     height: 50px;
+  }
+
+  .btns .btn--new {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 35px;
+    transform: translateY(-50%);
+    background-color: #c7365f;
+    color: white;
+    font-weight: 600;
+    gap: 5px;
+    font-size: 1.5rem;
+    padding: 0.7rem 1.5rem;
   }
 }
